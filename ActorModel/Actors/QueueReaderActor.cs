@@ -37,7 +37,7 @@ namespace ActorModel.Actors
                 fibonacciActor.Tell(new FibonacciSourceMessage(i));
             };
 
-            _channel.BasicConsume(queue: "MessageQueue", noAck: true, consumer: consumer);
+            _channel.BasicConsume(queue: "MessageQueue", autoAck: true, consumer: consumer);
         }
 
         public override void AroundPostStop()

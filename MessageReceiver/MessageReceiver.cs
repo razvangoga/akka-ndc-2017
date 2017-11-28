@@ -27,7 +27,7 @@ namespace MessageReceiver
                     Console.WriteLine(" [x] Received {0}", message);
                 };
                 channel.BasicConsume(queue: "MessageQueue",
-                    noAck: true,
+                    autoAck: true,
                     consumer: consumer);
 
                 Console.WriteLine(" Press [enter] to exit.");
